@@ -29,7 +29,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.queensgambit.queens_gambit"
+        applicationId = "com.ashmitmandal.queensgambit"
         minSdk = flutter.minSdkVersion // Minimum Android version supported (overriding default SDK version)
         targetSdk = 34 // MUST be 34 or higher (Google Play requirement)
         versionCode = flutter.versionCode
