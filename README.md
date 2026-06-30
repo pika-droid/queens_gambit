@@ -53,14 +53,27 @@ The N-Queens puzzle is the problem of placing N chess queens on an N×N chessboa
 
 ### Building for Production (Android)
 
-To generate release APKs, run:
+#### 🔑 Signing Configuration
+Signing credentials (alias, passwords) are loaded dynamically from `android/key.properties` (which is excluded from Git to keep it secure). Make sure this file exists locally before compiling.
+
+#### 📦 Build signed release App Bundle (AAB)
+To generate the signed release App Bundle (`.aab`) for Google Play Store upload, run:
 ```bash
-flutter build apk --release
+flutter build appbundle --release
 ```
-This will produce a universal APK. To build split architecture APKs (for smaller app sizes), use:
-```bash
-flutter build apk --split-per-abi --release
-```
+The output will be saved at: `build/app/outputs/bundle/release/app-release.aab`.
+
+#### 🎨 Store Listing Assets
+All required store assets are compiled and preserved in the [store_assets](file:///c:/Users/ashmi/OneDrive/Documents/Personal%20Projects/Queen's%20Gambit/store_assets) folder:
+- **App Icon (512x512 PNG)**: `store_assets/play_store_icon.png`
+- **Feature Graphic (1024x500 PNG)**: `store_assets/play_store_feature_graphic.png`
+- **Screenshots (576x1280)**: `store_assets/*page.jpeg`
+- **Signed Bundle**: `store_assets/app-release.aab`
+
+## ⚖ Privacy Policy & Data Safety
+- **Privacy Policy**: [Privacy Policy Page](https://pika-droid.github.io/queens_gambit/privacy_policy.html) (source code in `web/privacy_policy.html`).
+- **Data Collection**: This application runs entirely offline, requests no network/internet permissions on Android, and does not collect, track, or share any personal user data.
+
 
 ## 🎮 How to Play
 
